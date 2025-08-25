@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - Meta</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="editor.html" class="create-btn">Create</a>
+                <a href="explore.html" class="explore-btn">Explore</a>
+                <a href="team.html" class="team-btn">Our Team</a>
+                <div class="auth-buttons">
+                    <button class="join-btn">Join</button>
+                    <button class="login-btn">Log In</button>
+                </div>
+            </nav>
+        </header>
+        <div class="overlay" id="overlay" style="display:none;"></div>
+        <div id="joinDialog" class="login-dialog" style="display: none;">
+  <h2>Create Account</h2>
+  <form>
+    <label for="newUsername">Username:</label><br>
+    <input type="text" id="newUsername" name="newUsername" required><br><br>
+
+    <label for="newPassword">Password:</label><br>
+    <input type="password" id="newPassword" name="newPassword" required><br><br>
+
+    <label for="country">Country:</label><br>
+    <input type="text" id="country" name="country"><br><br>
+
+    <label for="pfp">Profile Picture:</label><br>
+    <input type="file" id="pfp" name="pfp" accept="image/*"><br><br>
+
+    <button type="submit">Done</button>
+  </form>
+</div>
+        <div id="loginDialog" class="login-dialog" style="display: none;">
+  <h2>Log In</h2>
+  <form>
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <button type="submit">Done</button>
+  </form>
+</div>
+        <h1>Hello!</h1>
+        <p>Welcome&nbsp;to&nbsp;this&nbsp;website!</p>
+        <script src="script.js"></script>
+    </body>
+</html>

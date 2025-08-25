@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Our Team</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Home</a>
+    <h1>Our Team</h1>
+  </header>
+
+  <main>
+    <ul id="teamList">
+      <!-- Team members will appear here -->
+    </ul>
+
+    <h3>Join the Team</h3>
+    <form id="joinTeamForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="address">Work Address:</label>
+      <input type="text" id="address" required>
+
+      <button type="submit">Join</button>
+    </form>
+  </main>
+
+  <script>
+    const teamList = document.getElementById('teamList');
+    const joinForm = document.getElementById('joinTeamForm');
+
+    // Start with you in the team
+    const teamMembers = [
+      { name: 'Amarachi', address: '90 Bradbury Road' }
+    ];
+
+    function renderTeam() {
+      teamList.innerHTML = '';
+      teamMembers.forEach(member => {
+        const li = document.createElement('li');
+        li.textContent = `${member.name} — ${member.address}`;
+        teamList.appendChild(li);
+      });
+    }
+
+    joinForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      // Rule: must work at 90 Bradbury Road
+      if (address.toLowerCase() !== '90 bradbury road') {
+        alert('Sorry, only people who work at 90 Bradbury Road can join.');
+        return;
+      }
+
+      // Simple "no hackers" check
+      if (name.toLowerCase().includes('hack') || address.toLowerCase().includes('hack')) {
+        alert('Access denied.');
+        return;
+      }
+
+      teamMembers.push({ name, address });
+      renderTeam();
+      joinForm.reset();
+    });
+
+    renderTeam();
+
+    localStorage.setItem('username', username);
+localStorage.setItem('rank', 'New User'); // default for everyone
+  </script>
+</body>
+</html>

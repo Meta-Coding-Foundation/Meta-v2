@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Project Editor</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    textarea { width: 32%; height: 200px; }
+    iframe { width: 100%; height: 300px; border: 1px solid #ccc; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Back to Home</a>
+    <h1>Try HTML, CSS & JavaScript</h1>
+  </header>
+
+  <main>
+    <h3>HTML</h3>
+    <textarea id="htmlCode" placeholder="Write HTML here..."></textarea>
+
+    <h3>CSS</h3>
+    <textarea id="cssCode" placeholder="Write CSS here..."></textarea>
+
+    <h3>JavaScript</h3>
+    <textarea id="jsCode" placeholder="Write JavaScript here..."></textarea>
+
+    <br><br>
+    <button id="runCode">Run</button>
+
+    <iframe id="output"></iframe>
+  </main>
+
+  <script>
+    document.getElementById('runCode').addEventListener('click', () => {
+      const html = document.getElementById('htmlCode').value;
+      const css = `<style>${document.getElementById('cssCode').value}</style>`;
+      const js = `<script>${document.getElementById('jsCode').value}<\/script>`;
+      const output = document.getElementById('output');
+      output.srcdoc = html + css + js;
+    });
+
+    document.getElementById('shareBtn').addEventListener('click', () => {
+        const html = document.getElementById('htmlCode').value;
+        const css = `<style>${document.getElementById('cssCode').value}</style>`;
+        const js = `<script>${document.getElementById('jsCode').value}<\/script>`;
+  
+        const fullCode = html + css + js;
+        navigator.clipboard.writeText(fullCode).then(() => {
+        alert('Code copied! Paste it anywhere to share.');
+      });
+    });
+  </script>
+</body>
+</html>
