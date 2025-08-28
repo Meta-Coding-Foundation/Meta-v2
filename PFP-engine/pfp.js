@@ -6,7 +6,7 @@ const savedPFP = localStorage.getItem("userPFP");
 if (savedPFP) {
   pfpImage.src = savedPFP;
 } else {
-  pfpImage.src = ""; // This will show the broken icon intentionally
+  pfpImage.src = ""; // Shows broken icon intentionally
 }
 
 // Click image to open file picker
