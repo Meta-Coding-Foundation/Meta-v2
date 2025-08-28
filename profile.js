@@ -23,3 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     rankElement.classList.add('rank-new');
   }
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedPFP = localStorage.getItem("userPFP");
+  if (savedPFP) {
+    const profilePic = document.getElementById("profilePic");
+    profilePic.src = savedPFP;
+    profilePic.style.width = "20px";
+    profilePic.style.height = "20px";
+    profilePic.style.borderRadius = "50%";
+    profilePic.style.objectFit = "cover";
+  }
+});
