@@ -1,16 +1,17 @@
 const pfpImage = document.getElementById("pfpImage");
 const pfpInput = document.getElementById("pfpInput");
+const uploadBtn = document.getElementById("uploadBtn");
 
-// Load saved PFP if available
+// Load saved image if available
 const savedPFP = localStorage.getItem("userPFP");
-pfpImage.src = savedPFP || ""; // Shows broken icon if none
+pfpImage.src = savedPFP || "";
 
-// Click image to open file picker
-pfpImage.addEventListener("click", () => {
+// Open file picker when button is clicked
+uploadBtn.addEventListener("click", () => {
   pfpInput.click();
 });
 
-// When a file is selected, preview and save it
+// Preview and save image
 pfpInput.addEventListener("change", (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
