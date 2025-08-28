@@ -5,8 +5,8 @@ body {
   padding: 50px;
 }
 
-body {
-  background-image: url("https://raw.githubusercontent.com/Chineme-rgb/Meta-background/main/download%20(2).png");
+body::after {
+  background-image: url("https://raw.githubusercontent.com/Chineme-rgb/Meta-background/refs/heads/main/download%20(2).png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,4 +155,5 @@ h1 {
 .rank-new {
   color: #4caf50; /* green */
 }
+
 
