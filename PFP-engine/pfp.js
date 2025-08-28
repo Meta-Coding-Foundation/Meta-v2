@@ -17,3 +17,8 @@ pfpInput.addEventListener("change", (event) => {
     reader.readAsDataURL(file);
   }
 });
+
+reader.onload = function(e) {
+  document.getElementById("pfpImage").src = e.target.result;
+  localStorage.setItem("userPFP", e.target.result); // Save image data
+};
