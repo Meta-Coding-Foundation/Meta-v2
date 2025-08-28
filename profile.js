@@ -35,3 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
     profilePic.style.objectFit = "cover";
   }
 });
+
+profilePic.addEventListener("click", () => {
+  window.location.href = "pfp-engine/index.html";
+});
