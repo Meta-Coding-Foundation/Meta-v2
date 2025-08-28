@@ -1,0 +1,21 @@
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pfp-engine img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4C97FF;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.pfp-engine img:hover {
+  transform: scale(1.05);
+}
