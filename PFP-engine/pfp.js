@@ -3,11 +3,7 @@ const pfpInput = document.getElementById("pfpInput");
 
 // Load saved PFP if available
 const savedPFP = localStorage.getItem("userPFP");
-if (savedPFP) {
-  pfpImage.src = savedPFP;
-} else {
-  pfpImage.src = ""; // Shows broken icon intentionally
-}
+pfpImage.src = savedPFP || ""; // Shows broken icon if none
 
 // Click image to open file picker
 pfpImage.addEventListener("click", () => {
