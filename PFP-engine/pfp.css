@@ -1,12 +1,21 @@
 body {
-  background: #f0f0f0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.pfp-engine img {
+.pfp-engine {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+#pfpImage {
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -16,6 +25,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-.pfp-engine img:hover {
+#pfpImage:hover {
   transform: scale(1.05);
 }
